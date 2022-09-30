@@ -3,14 +3,13 @@ package com.bridgelabz;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.bridglabz.UserRegistrationUC4;
+import com.bridglabz.UserRegistrationUC5;
 
+public class UserRegistrationTestUC5 {
+	
+	UserRegistrationUC5 userRegistration =new UserRegistrationUC5();
 
-public class UserRegistrationTestUC4 {
-
-	UserRegistrationUC4 userRegistration = new UserRegistrationUC4();
-
-    @Test
+	@Test
     public void givenFirstName_WhenInFormat_ShouldReturnTrue() {
         boolean result = userRegistration.firstName("Ramesh");
         Assert.assertEquals(true, result);
@@ -28,13 +27,13 @@ public class UserRegistrationTestUC4 {
 
     @Test
     public void givenLastName_WhenInFormat_ShouldReturnTrue() {
-        boolean result = userRegistration.lastName("Ramas");
+        boolean result = userRegistration.lastName("Rames");
         Assert.assertEquals(true, result);
     }
 
     @Test
     public void givenLastName_WhenOurOfFormat_ShouldReturnFalse() {
-        boolean result = userRegistration.lastName("ramas");
+        boolean result = userRegistration.lastName("rames");
         Assert.assertEquals(false, result);
     }
     
@@ -69,7 +68,18 @@ public class UserRegistrationTestUC4 {
     		Assert.assertEquals(false, result);
     	}
 
+    	/*
+    	 * method to validate password
+    	 */
+    	@Test
+    	public void givenPassword_WhenInFormat_ShouldReturnTrue() {
+    		boolean result = userRegistration.passwordRule1("karnatak");
+    		Assert.assertEquals(true, result);
+    	}
+    	@Test
+    	public void givenPassword_WhenOurOfFormat_ShouldReturnFalse() {
+    		boolean result = userRegistration.passwordRule1("abcd");
+    		Assert.assertEquals(false, result);
+    	}
 
 }
-
-
